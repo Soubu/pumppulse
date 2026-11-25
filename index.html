@@ -951,10 +951,10 @@ const TR={
  nReport:['Report','Ripoti','Lapor'],nSms:['SMS line','Laini ya SMS','Talian SMS'],nMech:['Mechanics','Mafundi','Juruteknik'],nDist:['District','Wilaya','Daerah'],nAbout:['How it works','Inavyofanya kazi','Cara ia berfungsi'],
  strip:['1 in 4 rural handpumps is broken at any moment. Try the full loop:','Pampu 1 kati ya 4 vijijini ni mbovu wakati wowote. Jaribu mzunguko mzima:','1 daripada 4 pam tangan luar bandar rosak pada bila-bila masa. Cuba kitaran penuh:'],
  stripReal:['Real water points from OpenStreetMap. Their status comes from community reports. Try it:','Vituo halisi vya maji kutoka OpenStreetMap. Hali yake inatoka kwa ripoti za jamii. Jaribu:','Punca air sebenar dari OpenStreetMap. Statusnya datang daripada laporan komuniti. Cuba:'],
- s1:['Tap a water point on the map','Gusa kituo cha maji kwenye ramani','Ketik punca air pada peta'],s2:['Text a report from the SMS line','Tuma ripoti kwa SMS','Hantar laporan melalui SMS'],s3:['Fix the top job as a mechanic','Tengeneza kazi ya kwanza kama fundi','Baiki kerja teratas sebagai juruteknik'],
+ s1:['Tap a water point on the map','Gusa kituo cha maji kwenye ramani','Tekan punca air pada peta'],s2:['Text a report from the SMS line','Tuma ripoti kwa SMS','Hantar laporan melalui SMS'],s3:['Fix the top job as a mechanic','Tengeneza kazi ya kwanza kama fundi','Baiki kerja teratas sebagai juruteknik'],
  ok:['Working','Inafanya kazi','Berfungsi'],warn:['Needs attention','Inahitaji uangalizi','Perlu perhatian'],down:['No water','Hakuna maji','Tiada air'],unknown:['Not yet reported','Bado haijaripotiwa','Belum dilaporkan'],
  askH:['Is your water point working?','Je, kituo chako cha maji kinafanya kazi?','Adakah punca air anda berfungsi?'],
- askP:['Tap any water point on the map to report a problem or confirm it works. No smartphone? Text the SMS line from any phone.','Gusa kituo chochote cha maji kwenye ramani kuripoti tatizo au kuthibitisha kinafanya kazi. Huna simu janja? Tuma SMS kutoka simu yoyote.','Ketik mana-mana punca air pada peta untuk melaporkan masalah atau mengesahkan ia berfungsi. Tiada telefon pintar? Hantar SMS dari mana-mana telefon.'],
+ askP:['Tap any water point on the map to report a problem or confirm it works. No smartphone? Text the SMS line from any phone.','Gusa kituo chochote cha maji kwenye ramani kuripoti tatizo au kuthibitisha kinafanya kazi. Huna simu janja? Tuma SMS kutoka simu yoyote.','Tekan mana-mana punca air pada peta untuk melaporkan masalah atau mengesahkan ia berfungsi. Tiada telefon pintar? Hantar SMS dari mana-mana telefon.'],
  fDown:['water points with no water','vituo visivyotoa maji','punca air tanpa air'],fCut:['people cut off','watu bila maji','orang tanpa air'],fMapped:['water points mapped','vituo vya maji','punca air dipetakan'],fWeek:['reports this week','ripoti wiki hii','laporan minggu ini'],latest:['Latest reports','Ripoti za karibuni','Laporan terkini'],
  village:['village','kijiji','kampung'],dep:['people depend on it','watu wanaitegemea','orang bergantung padanya'],without:['without water','bila maji','tanpa air'],
  nearest:['nearest working water point','kituo kilicho karibu kinachofanya kazi','punca air terdekat yang berfungsi'],walk:['extra walking per day, community-wide','saa za ziada za kutembea kwa siku, jamii nzima','jam berjalan tambahan sehari, seluruh komuniti'],since:['since first reported','tangu iripotiwe','sejak pertama dilaporkan'],checked:['last confirmed working','ilithibitishwa mara ya mwisho','kali terakhir disahkan berfungsi'],
@@ -968,8 +968,13 @@ const TR={
  fAll:['All','Zote','Semua'],fAtt:['Attention','Uangalizi','Perhatian'],hide:['Hide','Ficha','Sembunyi'],kmwalk:['km walk','km kutembea','km berjalan'],findPh:['Find water point or village','Tafuta kituo au kijiji','Cari punca air atau kampung'],
  iok:['Confirmed working','Imethibitishwa inafanya kazi','Disahkan berfungsi'],ifix:['Repaired','Imetengenezwa','Telah dibaiki'],via:['via','kupitia','melalui'],
  gmaps:['Open in Google Maps','Fungua kwenye Google Maps','Buka di Google Maps'],gdir:['Walking directions to the nearest working point','Maelekezo ya kutembea hadi kituo kinachofanya kazi','Arah berjalan ke punca air berfungsi terdekat'],
- estP:['(estimate)','(makadirio)','(anggaran)'],addPt:['+ Add water point','+ Ongeza kituo','+ Tambah punca air'],addHint:['Tap the map where the water point is','Gusa ramani mahali kituo kilipo','Ketik peta di lokasi punca air'],
- thanks:['Thank you!','Asante!','Terima kasih!']};
+ estP:['(estimate)','(makadirio)','(anggaran)'],addPt:['+ Add water point','+ Ongeza kituo','+ Tambah punca air'],addHint:['Tap the map where the water point is','Gusa ramani mahali kituo kilipo','Tekan peta di lokasi punca air'],
+ thanks:['Thank you!','Asante!','Terima kasih!'],
+ realPts:['real water points from OpenStreetMap.','vituo halisi vya maji kutoka OpenStreetMap.','punca air sebenar dari OpenStreetMap.'],chArea:['Change area','Badili eneo','Tukar kawasan'],
+ demoNote:['Showing the offline demo district.','Inaonyesha wilaya ya mfano (nje ya mtandao).','Memaparkan daerah demo luar talian.'],loadReal:['Load a real place','Pakia mahali halisi','Muat tempat sebenar'],anyWorld:['anywhere in the world.','popote duniani.','di mana-mana di dunia.'],
+ sparse1:['Only','Ni','Hanya'],sparseOne:['water point is on the map here','kituo kimoja tu kiko kwenye ramani hapa','punca air ada di peta di sini'],sparseMany:['water points are on the map here','vituo viko kwenye ramani hapa','punca air ada di peta di sini'],noneMapped:['No water points mapped here yet','Bado hakuna vituo vya maji kwenye ramani hapa','Belum ada punca air dipetakan di sini'],
+ sparseP:['Many rural water sources have never been mapped. That gap is part of the problem. Use “+ Add water point” to put the wells, taps, tanks and gravity-feed intakes people really use on the map.','Vyanzo vingi vya maji vijijini havijawahi kuwekwa kwenye ramani. Pengo hilo ni sehemu ya tatizo. Tumia “+ Ongeza kituo” kuweka visima, koki, matangi na vyanzo vya mvuto ambavyo watu hutumia kwa kweli.','Banyak punca air luar bandar tidak pernah dipetakan. Jurang itu sebahagian daripada masalah. Gunakan “+ Tambah punca air” untuk meletakkan perigi, pili, tangki dan punca air graviti yang benar-benar digunakan penduduk ke dalam peta.'],
+ usePpl:['People who use it','Watu wanaokitumia','Bilangan pengguna'],builtBy:['Built by Soubu for the Acodemic × KeebsforWater Global SDG Hackathon','Imetengenezwa na Soubu kwa Acodemic × KeebsforWater Global SDG Hackathon','Dibina oleh Soubu untuk Acodemic × KeebsforWater Global SDG Hackathon']};
 const LIDX={en:0,sw:1,ms:2},LNAME={en:'EN',sw:'SW',ms:'BM'},LORDER=['en','ms','sw'];
 const t=k=>{const a=TR[k];return a?(a[LIDX[ui.lang]]??a[0]):k};
 const issueT=k=>TR[k]?t(k):ISSUES[k]?.l||k;
@@ -1150,12 +1155,13 @@ function panelMap(){
   if(!p){const down=S.pumps.filter(x=>x.status==='down');
     return`<h2 style="font-size:30px">${t('askH')}</h2>
     <p class="muted">${t('askP')}</p>
-    ${S.area.real?`<p class="small" style="margin:0"><b>${esc(S.area.name)}</b> · ${S.pumps.length} real water points from OpenStreetMap. <a href="#area">Change area</a></p>`:`<p class="small muted" style="margin:0">Showing the offline demo district. <a href="#area">Load a real place</a> anywhere in the world.</p>`}
-    ${S.area.real&&S.pumps.length<10?`<div class="empty"><h3>${S.pumps.length?`Only ${S.pumps.length} water point${S.pumps.length>1?'s are':' is'} on the map here`:'No water points mapped here yet'}</h3><p class="muted">Many rural water sources have never been mapped. That gap is part of the problem. Use “+ Add water point” to put the wells, taps, tanks and gravity-feed intakes people really use on the map.</p></div>`:''}
+    ${S.area.real?`<p class="small" style="margin:0"><b>${esc(S.area.name)}</b> · ${S.pumps.length} ${t('realPts')} <a href="#area">${t('chArea')}</a></p>`:`<p class="small muted" style="margin:0">${t('demoNote')} <a href="#area">${t('loadReal')}</a> ${t('anyWorld')}</p>`}
+    ${S.area.real&&S.pumps.length<10?`<div class="empty"><h3>${S.pumps.length?`${t('sparse1')} ${S.pumps.length} ${S.pumps.length>1?t('sparseMany'):t('sparseOne')}`:t('noneMapped')}</h3><p class="muted">${t('sparseP')}</p></div>`:''}
     <div class="facts"><div class="fact hot"><b>${down.length}</b><span>${t('fDown')}</span></div><div class="fact hot"><b>${down.reduce((s,x)=>s+x.served,0).toLocaleString()}</b><span>${t('fCut')}</span></div>
     <div class="fact"><b>${S.pumps.length}</b><span>${t('fMapped')}</span></div><div class="fact"><b>${S.reports.filter(r=>NOW()-r.t<7*DAY).length}</b><span>${t('fWeek')}</span></div></div>
     <h3 style="font-size:22px">${t('latest')}</h3>
-    ${S.reports.length?`<ul class="log">${S.reports.filter((r,i,a)=>a.findIndex(x=>x.id===r.id)===i).slice(0,6).map(r=>`<li class="${r.issue==='fixed'||r.issue==='ok'?'fix':ISSUES[r.issue]?.st||''}"><a href="#map" data-pick="${r.id}"><b>${r.id}</b></a> ${esc(P(r.id)?.v)} · ${esc(issueL(r.issue))} · ${ago(r.t)}</li>`).join('')}</ul>`:`<p class="muted small">${t('noRep')}</p>`}`}
+    ${S.reports.length?`<ul class="log">${S.reports.filter((r,i,a)=>a.findIndex(x=>x.id===r.id)===i).slice(0,6).map(r=>`<li class="${r.issue==='fixed'||r.issue==='ok'?'fix':ISSUES[r.issue]?.st||''}"><a href="#map" data-pick="${r.id}"><b>${r.id}</b></a> ${esc(P(r.id)?.v)} · ${esc(issueL(r.issue))} · ${ago(r.t)}</li>`).join('')}</ul>`:`<p class="muted small">${t('noRep')}</p>`}
+    <p class="small muted" style="margin-top:auto;padding-top:8px">${t('builtBy')} · <a href="https://github.com/Soubu/pumppulse">GitHub</a></p>`}
   const m=impact(p);
   return`<div class="row" style="justify-content:space-between"><span class="plate">${p.id}</span>${tag(p)}</div>
   <p style="margin:-8px 0 0"><b>${esc(p.v)}</b> ${t('village')} · ${kindL(p)}</p>
@@ -1166,7 +1172,7 @@ function panelMap(){
   p.status==='warn'?`<div class="fact"><b>${daysT(m.days)}</b><span>${t('since')}</span></div>`:`<div class="fact"><b>${p.check?ago(p.check):'—'}</b><span>${p.check?t('checked'):t('unknown')}</span></div>`}</div>
   ${p.issue?`<div><p style="margin:0"><b>${t('problem')}:</b> ${esc(issueT(p.issue))}${p.assigned?` · <span class="tag ok">${t('mech')}: ${esc(p.assigned)}</span>`:` · <span class="muted">${t('unassigned')}</span>`}</p>${confL(p)}</div>`:''}
   ${p.lat!=null?`<div class="row"><a class="btn ghost glink" href="${gm(p)}" target="_blank" rel="noopener">${t('gmaps')}</a>${p.status==='down'&&m.near?`<a class="btn ghost glink" href="${gm(p,m.near)}" target="_blank" rel="noopener">${t('gdir')}</a>`:''}</div>`:''}
-  ${S.area.real?`<div class="row"><label for="served" style="margin:0">People who use it</label><input class="inp" id="served" type="number" min="1" max="20000" value="${p.served}" style="width:110px"><select id="kind" aria-label="Type of water point" style="width:auto;flex:1">${Object.entries(KINDS).map(([k,v])=>`<option value="${k}" ${k===p.kind?'selected':''}>${v.l}</option>`).join('')}</select></div>`:''}
+  ${S.area.real?`<div class="row"><label for="served" style="margin:0">${t('usePpl')}</label><input class="inp" id="served" type="number" min="1" max="20000" value="${p.served}" style="width:110px"><select id="kind" aria-label="Type of water point" style="width:auto;flex:1">${Object.entries(KINDS).map(([k,v])=>`<option value="${k}" ${k===p.kind?'selected':''}>${v.l}</option>`).join('')}</select></div>`:''}
   <div><button class="btn ghost" type="button" id="platebtn">${ui.plate?t('plateH'):t('plateB')}</button>${ui.plate?`<div style="margin-top:10px">${plateSvg(p)}</div>`:''}</div>
   <form id="rep" class="opts" novalidate>
     <h3 style="font-size:22px">${isOpen(p)?t('add'):t('wrong')}</h3>
@@ -1300,6 +1306,13 @@ function pageAbout(){return`<div class="page">
   <h2>The evidence: speed of reporting is what matters</h2>
   <div class="prose"><p>In Kitui and Kwale counties in Kenya, University of Oxford researchers fitted handpumps with sensors that alert a mechanic the moment a pump stops being used. Paired with a local repair service, downtime fell from around 30 days to under 3. Most of the delay had never been the repair itself. It was the weeks before anyone found out.</p>
   <p>The need is not only in Africa. In Malaysia, the National Audit Report 2024 found only 61% of rural Sabah has treated water coverage, and around 39% of rural households in Sarawak lack treated or safe water. Many of those villages rely on gravity-feed systems that nobody monitors.</p></div>
+  <h2>Real cases from Malaysia</h2>
+  <div class="steps">
+    <div class="card"><h3>Sandakan, Sabah</h3><p>In Kampung Peringkat 6, Rancangan Lubuh, more than 750 residents say treated water barely flows from their taps, even though meters were installed back in 2010. Occasional government tanker deliveries stopped in 2021.</p><p class="small muted">Source: The Vibes</p></div>
+    <div class="card"><h3>Beluran, Sabah</h3><p>Kampung Tangkarason has no piped water. During a drought villagers relied on rivers with crocodiles and on muddy ponds. Large tankers can't reach many villages on the poor roads.</p><p class="small muted">Source: The Star</p></div>
+    <div class="card"><h3>Pitas, Sabah</h3><p>Two villages in one of Malaysia's ten poorest districts share a single, unprotected water source, raising health concerns.</p><p class="small muted">Source: The Vibes</p></div>
+  </div>
+  <div class="prose"><p>In every case, the people affected knew about the problem long before anyone with the power to fix it did. PumpPulse is built to close exactly that gap.</p></div>
   <h2>Prior work, and what PumpPulse does differently</h2>
   <div class="steps">
     <div class="card"><h3>Sensor-based monitoring</h3><p>Smart handpumps report automatically, but every pump needs a device, a SIM and a maintenance budget.</p></div>
@@ -1318,12 +1331,16 @@ function pageAbout(){return`<div class="page">
   <div class="sdg"><span style="background:#26bde2">SDG 6.1 · Safe water for all</span><span style="background:#26bde2">SDG 6.b · Community participation in water management</span><span style="background:#ff3a21">SDG 5 · Less water-collection burden on women and girls</span><span style="background:#4c9f38">SDG 3.9 · Fewer illnesses from unsafe sources</span></div>
   <h2>Assumptions in the model</h2>
   <div class="prose"><p class="muted">Households have 5 people and make one extra round trip a day at 4 km/h. The repair-time simulator assumes each water point breaks about 4 times a year (λ = 1/90 per day), so 30-day repairs give the observed 25% broken. Distances are straight lines. Contamination counts 1.25× and weak flow or leaks count less. In real places, people served are estimated by type (e.g. tap 150, well 250, tank 300) until someone edits them. The offline demo district, its villages and pumps are fictional.</p></div>
+  <p class="small muted" style="margin-top:28px">Built by Soubu (Johor, Malaysia) for the Acodemic × KeebsforWater Global SDG Hackathon · <a href="https://github.com/Soubu/pumppulse">Source code on GitHub</a></p>
   <h2>Sources</h2>
   <ul class="prose"><li><a href="https://opus.lib.uts.edu.au/handle/10453/142744">Foster et al. (2020), Functionality of handpump water supplies, Int. J. Water Resources Development</a></li>
   <li><a href="https://www.unicef.org/press-releases/fast-facts-1-4-people-globally-still-lack-access-safe-drinking-water-who-unicef">WHO/UNICEF JMP (2025), 1 in 4 people globally still lack safe drinking water</a></li>
   <li><a href="https://www.ukri.org/about-us/how-we-are-doing/research-outcomes-and-impact/smart-handpumps-securing-safe-water-supplies/">UKRI: Smart Handpump data helps deliver reliable drinking water (repair time 30 days to under 3)</a></li>
   <li><a href="https://www.tnb.com.my/assets/newsclip/28112024c.pdf">New Straits Times (Nov 2024): Treated water blow for Sabah rural folks, citing National Audit Report 2024</a></li>
   <li><a href="https://dayakdaily.com/sawas-brings-clean-treated-water-to-rumah-ninting-batang-ai">DayakDaily: SAWAS brings treated water to Rumah Ninting (Sarawak rural household figures)</a></li>
+  <li><a href="https://www.thevibes.com/articles/news/109984/sabah-village-water-bills-arrive-but-still-no-sign-of-treated-water">The Vibes: Sabah village, water bills arrive but still no treated water (Sandakan)</a></li>
+  <li><a href="https://www.thestar.com.my/news/nation/2025/05/19/drought-hit-villagers-in-sabah039s-interior-appeal-for-water-supply">The Star (May 2025): Drought-hit villagers in Sabah's interior appeal for water supply (Beluran)</a></li>
+  <li><a href="https://www.thevibes.com/index.php/articles/news/110393/sabah-villagers-left-exposed-as-only-water-source-remains-unprotected">The Vibes: Sabah villagers left exposed as only water source remains unprotected (Pitas)</a></li>
   <li><a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors: map data (ODbL)</a></li></ul>
   </div>`}
 

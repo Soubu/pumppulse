@@ -8,13 +8,21 @@ Water points sit broken for weeks because nobody tells the repair team. PumpPuls
 
 ## Project description
 
+### 60-second tour for the judge
+1. Open **https://soubu.github.io/pumppulse/**. It starts in an instant offline demo district.
+2. **Tap a pulsing red dot** to see how many people it serves, how long it's been dry, and the walk to the nearest working water point.
+3. Open **SMS line** and tap `BROKEN`. Watch the map turn red. Switch the language to **BM** and try `AIR KOTOR`.
+4. Open **Mechanics** → **Repair…** → **Mark fixed**. The pump turns blue.
+5. Open **District** and drag the simulator from 30 days to 3.
+6. *(Optional, needs up to a minute to load)* Tap the 📍 button → **Ranau, Sabah** to see real OpenStreetMap data, and add a missing water point.
+
 ### In one sentence
 PumpPulse turns the people who use a water pump into its alarm system: they report a breakdown from any phone, and mechanics get a queue ranked by how many people are going without water.
 
 ### Inspiration
 1 in 4 people on Earth still lacks safely managed drinking water (WHO/UNICEF, 2025). What surprised us is that a lot of the problem isn't missing infrastructure. The infrastructure exists and is broken. Across rural sub-Saharan Africa, more than 184 million people depend on handpumps, and research estimates about **one in four is not working at any moment** (Foster et al., 2020). Most could be fixed in an afternoon with a cheap spare part. They stay broken for weeks because nobody tells the mechanic. Meanwhile families, mostly women and girls, walk kilometres to the next working pump.
 
-It isn't only an African problem. Here in Malaysia, the National Audit Report 2024 found only 61% of rural Sabah has treated-water coverage, and about 39% of rural households in Sarawak lack treated or safe water. Many of those villages depend on gravity-feed systems and tanks that nobody monitors. So we built PumpPulse to work wherever someone needs it.
+It isn't only an African problem. Here in Malaysia, the National Audit Report 2024 found only 61% of rural Sabah has treated-water coverage, and about 39% of rural households in Sarawak lack treated or safe water. Many of those villages depend on gravity-feed systems and tanks that nobody monitors. Families in Sandakan have had water meters since 2010 but almost no water. Villagers in Beluran drew water from rivers with crocodiles during a drought. In every case the community knew long before anyone who could fix it. So we built PumpPulse to work wherever someone needs it, starting with home.
 
 Then we found the evidence that speed is what matters. In Kenya, University of Oxford researchers fitted pumps with sensors that alert a mechanic the moment a pump breaks. **Repair times fell from about 30 days to under 3.** Most of the delay had never been the repair itself. It was the weeks before anyone found out. A sensor in every pump is expensive, though. Almost everyone near a pump already has a phone. So we asked: can people be the sensor?
 
@@ -58,6 +66,8 @@ A single-file web app in vanilla HTML, CSS and JavaScript. Real places use **Lea
 Load real water-point records (government MIS or the Water Point Data Exchange), connect a real SMS gateway (e.g. Africa's Talking), move to a shared database so everyone sees the same live map, and pilot with one district's mechanics.
 
 *Map data © OpenStreetMap contributors (ODbL). The offline demo district is fictional. Sources: Foster et al. (2020), Int. J. Water Resources Development; WHO/UNICEF JMP 2025; UKRI / University of Oxford, Smart Handpumps; National Audit Report 2024 (via NST); DayakDaily / JBALB Sarawak.*
+
+*Built by Soubu (Johor, Malaysia).*
 
 ## Built with
 html5, css3, javascript, leaflet, openstreetmap, overpass-api, nominatim, google-maps, svg, localstorage, github-pages, playwright, ffmpeg
