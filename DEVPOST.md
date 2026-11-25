@@ -67,7 +67,7 @@ Load real water-point records (government MIS or the Water Point Data Exchange),
 
 *Map data © OpenStreetMap contributors (ODbL). The offline demo district is fictional. Sources: Foster et al. (2020), Int. J. Water Resources Development; WHO/UNICEF JMP 2025; UKRI / University of Oxford, Smart Handpumps; National Audit Report 2024 (via NST); DayakDaily / JBALB Sarawak.*
 
-*Built by Soubu (Johor, Malaysia).*
+*Built by Soubu (Malaysia).*
 
 ## Built with
 html5, css3, javascript, leaflet, openstreetmap, overpass-api, nominatim, google-maps, svg, localstorage, github-pages, playwright, ffmpeg
