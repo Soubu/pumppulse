@@ -1035,9 +1035,10 @@ async function geocode(q){
 async function overpass(lat,lon){
   const R=12000,a=`(around:${R},${lat},${lon})`;
   const q=`[out:json][timeout:25];(node${a}[man_made~"^(water_well|water_tap|water_tower|water_works|storage_tank|reservoir_covered)$"];node${a}[amenity~"^(drinking_water|water_point)$"];node${a}[natural=spring];node${a}[pump];);out body 400;node(around:16000,${lat},${lon})[place~"^(city|town|village|hamlet|suburb|neighbourhood|isolated_dwelling)$"][name];out body 300;`;
-  let err;
-  for(const u of OVERPASS){try{const r=await fetch(u,{method:'POST',body:'data='+encodeURIComponent(q),headers:{'Content-Type':'application/x-www-form-urlencoded'}});if(r.ok)return(await r.json()).elements||[];err=new Error('overpass '+r.status)}catch(e){err=e}}
-  throw err}
+  /* ask both public Overpass servers at once and take whichever answers first */
+  const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),90000);
+  try{return await Promise.any(OVERPASS.map(u=>fetch(u,{method:'POST',signal:ctl.signal,body:'data='+encodeURIComponent(q),headers:{'Content-Type':'application/x-www-form-urlencoded'}}).then(r=>{if(!r.ok)throw new Error('overpass '+r.status);return r.json()}).then(j=>j.elements||[])))}
+  finally{clearTimeout(timer);ctl.abort()}}
 function buildArea(place,els){
   const c={lat:+place.lat,lon:+place.lon},name=place.name||String(place.display_name||'Area').split(',')[0],cc=(place.address?.country_code||'').toLowerCase();
   const places=els.filter(e=>e.tags&&e.tags.place&&e.tags.name);
@@ -1051,7 +1052,7 @@ function buildArea(place,els){
   const mechs=MECHS_BY[cc]||MECHS_BY.x;
   return{area:{id,name,full:place.display_name||name,lat:c.lat,lon:c.lon,real:true,cc,prefix:pre},pumps,reports:[],repairs:[],seq:100,trend:null,tour:{},sms:[],mechs,mech:mechs[0],stripOff:false,lang:langFor(cc)}}
 async function loadPlace(place){
-  ui.areaMsg='<p class="muted">Loading water points from OpenStreetMap…</p>';ui.areaRes=[];renderAll();
+  ui.areaMsg='<p class="muted"><b>Loading water points from OpenStreetMap…</b><br>The free public map servers can take up to a minute when busy.</p>';ui.areaRes=[];renderAll();
   try{
     const probeId=place.osm_id?('osm-'+String(place.osm_type||'x')[0]+place.osm_id):null,saved=probeId&&loadState(probeId);
     const next=saved||buildArea(place,await overpass(place.lat,place.lon));
@@ -1150,7 +1151,7 @@ function panelMap(){
     return`<h2 style="font-size:30px">${t('askH')}</h2>
     <p class="muted">${t('askP')}</p>
     ${S.area.real?`<p class="small" style="margin:0"><b>${esc(S.area.name)}</b> · ${S.pumps.length} real water points from OpenStreetMap. <a href="#area">Change area</a></p>`:`<p class="small muted" style="margin:0">Showing the offline demo district. <a href="#area">Load a real place</a> anywhere in the world.</p>`}
-    ${S.area.real&&!S.pumps.length?`<div class="empty"><h3>No water points mapped here yet</h3><p class="muted">Use “+ Add water point” on the map to put them on it. Every point added helps the next person.</p></div>`:''}
+    ${S.area.real&&S.pumps.length<10?`<div class="empty"><h3>${S.pumps.length?`Only ${S.pumps.length} water point${S.pumps.length>1?'s are':' is'} on the map here`:'No water points mapped here yet'}</h3><p class="muted">Many rural water sources have never been mapped. That gap is part of the problem. Use “+ Add water point” to put the wells, taps, tanks and gravity-feed intakes people really use on the map.</p></div>`:''}
     <div class="facts"><div class="fact hot"><b>${down.length}</b><span>${t('fDown')}</span></div><div class="fact hot"><b>${down.reduce((s,x)=>s+x.served,0).toLocaleString()}</b><span>${t('fCut')}</span></div>
     <div class="fact"><b>${S.pumps.length}</b><span>${t('fMapped')}</span></div><div class="fact"><b>${S.reports.filter(r=>NOW()-r.t<7*DAY).length}</b><span>${t('fWeek')}</span></div></div>
     <h3 style="font-size:22px">${t('latest')}</h3>
